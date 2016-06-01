@@ -3,15 +3,8 @@
 class Footman < Unit
 
   def initialize
-    super(60, 10)
-  end
-  
-  def attack!(enemy)
-    enemy.damage(attack_power) 
-  end
-  
-  def damage(attack_power)
-    @health_points -= attack_power 
+    super(60, 10)#inherits from Unit and needs to take two arguments
+    # that the super has (HP, AP)
   end
   
 end
