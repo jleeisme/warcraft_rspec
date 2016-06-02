@@ -11,10 +11,6 @@ class Unit
     enemy.damage(attack_power) #the enemy takes damage from the value
     # of attack_power
   end
-
-  def attack_barracks(building)
-    building.damage(attack_power / 2)
-  end
   
   def damage(attack_power)
     @health_points -= attack_power #the instance of @health_points
@@ -27,10 +23,9 @@ class Unit
     end
   end
 
-  def can_attack?
-    if !dead?
-      true
-    end
+# attack if enemy is not dead and unit is not dead
+  def can_attack?(enemy)
+    !enemy.dead? && !dead?
   end
-  
+
 end

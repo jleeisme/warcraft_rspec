@@ -15,23 +15,22 @@ describe Unit do
     end
   end
 
-  # describe "#can_attack?" do
-  #   it "return true if unit is alive and enemy is alive." do
-  #     enemy = Unit.new(0, 0)
-  #     expect(enemy.!dead?).to be_truthy
-  #   end
-  # end
+  # enemy is alive, unit is dead, can_attack is false
   describe "can_attack?" do
     it "if unit is dead, return false on can_attack?" do
-      expect(@unit.dead?).to be_truthy
+      enemy = Unit.new(200, 300)
+      expect(@unit.can_attack?(enemy)).to be_falsey
     end
 
+# instance of dead enemy, instance of alive unit, attack dead enemy is false
     it "if enemy is dead, return false on can_attack?" do
-      expect(@enemy.dead?).to be_truthy
+      enemy = Unit.new(0, 0)
+      unit = Unit.new(60, 20)
+      expect(unit.can_attack?(enemy)).to be_falsey
     end
   end
 
 end
 
 # if unit is dead it cannot attack
-# if unit is !dead and enemy is dead !attack
+# if enemy is dead it cannot be attacked
