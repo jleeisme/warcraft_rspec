@@ -6,6 +6,7 @@ class Barracks
   def initialize
     @gold = 1000
     @food = 80
+    @health_points = 500
   end
 
 # must have greater or equal to 135 gold & 2 food
